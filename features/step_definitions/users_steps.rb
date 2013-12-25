@@ -21,3 +21,16 @@ When(/^I sign in$/) do
   fill_in "Password", with: "123456789"
   click_button "Sign in"
 end
+
+Given(/^I have signed in$/) do
+  FactoryGirl.create(:user)
+  visit '/'
+  click_link "Sign In"
+  fill_in "Email", with: "michaelbottjer@hotmail.com"
+  fill_in "Password", with: "123456789"
+  click_button "Sign in"
+end
+
+When(/^I sign out$/) do
+  click_link "Sign Out"
+end

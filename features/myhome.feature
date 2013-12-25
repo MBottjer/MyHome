@@ -16,4 +16,4 @@ Feature: Signing up, signing in and signing out
   Scenario: Signing out
     Given I have signed in 
     When I sign out
-    Then I should see "You have signed out successfully"
+    Then I should see "Signed out successfully"
