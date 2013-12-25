@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <header>
+      <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="#">MyHome</a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <% if current_user %>
+            <li class="active"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <li class="active"><a href="/users/sign_up">Sign Up</a></li>
+            <% end %>
+            <li class="has-dropdown">
+              <a href="#"><i class="fa fa-cog fa-spin fa-2x headerCog"></i></a>
+              <ul class="dropdown">
+                <li><a href="#">Edit</a></li>
+                <% unless current_user %>
+                <li><a href="/users/sign_in">Sign In</a></li>
+                <% end %>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li><a href="#">Left Nav Button</a></li>
+          </ul>
+        </section>
+      </nav>
+    </header>
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </body>
+  <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+</html>
