@@ -1,0 +1,15 @@
+<h1>Listing Links</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+ 
+  <% @links.each do |link| %>
+    <tr>
+      <td><%= link.name %></td>
+      <td><%= link.uri %></td>
+    </tr>
+  <% end %>
+</table>
