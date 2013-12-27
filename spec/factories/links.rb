@@ -4,5 +4,6 @@ FactoryGirl.define do
   factory :link do
     name "MyString"
     uri "MyText"
+    user nil
   end
 end

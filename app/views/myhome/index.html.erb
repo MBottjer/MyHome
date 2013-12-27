@@ -1,33 +1,32 @@
-<div class="row">
+<% if current_user %>
 
-  <div class="small-6 large-centered columns middle">
-    <ul class="nav nav-pills nav-stacked">
+  <div class="row">
+
+    <div class="small-6 large-centered columns middle">
+      <ul class="nav nav-pills nav-stacked">
       <% @links.each do |link| %>
-      <% if link.name.match /^[gG]ithub$/ %>
-      <li><a href="<%= link.uri %>" class="button radius"><i class="fa fa-github-square fa-2x"></i><%= link.name %></a></li>
-      <% elsif link.name.match /^[fF]acebook$/ %>
-      <li><a href="<%= link.uri %>" class="button radius"><i class="fa fa-facebook-square fa-2x"></i><%= link.name %></a></li>
-      <% elsif link.name.match /^[yY]outube$/ %>
-      <li><a href="<%= link.uri %>" class="button radius"><i class="fa fa-youtube fa-2x"></i><%= link.name %></a></li>
-      <% elsif link.name.match /^[gG]oogle+$/ %>
-      <li><a href="<%= link.uri %>" class="button radius"><i class="fa fa-google-plus fa-2x"></i><%= link.name %></a></li>
-      <% elsif link.name.match /^[lL]inked[iI]n$/ %>
-      <li><a href="<%= link.uri %>" class="button radius"><i class="fa fa-linkedin-square fa-2x"></i><%= link.name %></a></li>
-      <% elsif link.name.match /^[tT]witter$/ %>
-      <li><a href="<%= link.uri %>" class="button radius"><i class="fa fa-twitter-square fa-2x"></i><%= link.name %></a></li>
-      <% else %>
-      <li><a href="<%= link.uri %>" class="button radius"><%= link.name %></a></li>
+        <div class="breakers">
+          <li><a href="<%= link.uri %>" class="<%= link.has_relevant_icon %>"><%= link.name %></a><span class="editButton">&nbsp;&nbsp;<%= link_to 'Edit', edit_link_path(link) %></span></li>
+        </div>
       <% end %>
-      <%= link_to 'Edit', edit_link_path(link) %>
-    <% end %>
-    </ul>
+      </ul>
 
+    </div>
+
+    <script>
+      // setTimeout(function() {window.location = "http://www.google.com/"; }, 4000);
+    </script>
   </div>
 
-</div>
+<% else %> 
+
+  <div class="row">
+    <div class="small-6 large-centered columns middle">
+      Hello, nothing to see here.
+    </div>
+  </div>
 
 
-  <span>
-    <div class="welcome">Welcome Michael, </div>
-    
-  </span>
+<% end %>
+
+
