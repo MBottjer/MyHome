@@ -17,3 +17,13 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+window.onload = function () {
+
+var timestamp = document.getElementById("timestamp");
+
+timestamp.appendChild(document.createTextNode(new Date().toLocaleDateString()));
+
+// timestamp.onclick = function() { this.innerHTML = new Date().toString(); }
+
+};
