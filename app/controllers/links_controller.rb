@@ -3,6 +3,7 @@ class LinksController < ApplicationController
   before_action :authenticate_user!
 
   def new 
+    @user = current_user
     @link = Link.new
   end
 
@@ -21,7 +22,8 @@ class LinksController < ApplicationController
   end
 
   def create
-    @link = Link.create(link_params)
+    @user = current_user
+    @link = @user.links.create(link_params)
     if @link.save
       redirect_to root_path
     else 
@@ -34,7 +36,7 @@ class LinksController < ApplicationController
   end
 
   def index
-    @links = Link.all
+    @links = current_user.links
   end
 
   private

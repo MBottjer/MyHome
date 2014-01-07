@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
+    <script src='http://cdn-files.deezer.com/js/min/dz.js'></script>
   </head>
 
   <body>
@@ -32,7 +33,9 @@
             <li class="has-dropdown">
               <a href="#"><i class="fa fa-cog fa-spin fa-2x headerCog"></i></a>
               <ul class="dropdown">
-                <li><a href="#" class="preferences">MyLinks</a></li>
+                <% if current_user %>
+                <li><a href="#" class="preferences"><%= link_to "AddLink", new_user_link_path(current_user.id) %></a></li>
+                <% end %>
                 <% unless current_user %>
                 <li><a href="/users/sign_in">Sign In</a></li>
                 <% end %>

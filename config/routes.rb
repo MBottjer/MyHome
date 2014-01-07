@@ -7,7 +7,9 @@ MyHome::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'myhome#index'
 
-  resources :links
+  resources :users do 
+    resources :links 
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

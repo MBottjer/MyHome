@@ -83,6 +83,7 @@ div.middle {
 
 /*Time to animate*/
 .x1 {
+  top: 50px;
   -webkit-animation: moveclouds 15s linear infinite;
   -moz-animation: moveclouds 15s linear infinite;
   -o-animation: moveclouds 15s linear infinite;
@@ -105,7 +106,7 @@ div.middle {
 }
 
 .x3 {
-  left: -250px; top: -200px;
+  left: -250px; top: -300px;
   
   -webkit-transform: scale(0.8);
   -moz-transform: scale(0.8);
@@ -118,7 +119,7 @@ div.middle {
 }
 
 .x4 {
-  left: 470px; top: -250px;
+  left: 470px; top: 50px;
   
   -webkit-transform: scale(0.75);
   -moz-transform: scale(0.75);
@@ -131,7 +132,7 @@ div.middle {
 }
 
 .x5 {
-  left: -150px; top: -150px;
+  left: -150px; top: -50px;
   
   -webkit-transform: scale(0.8);
   -moz-transform: scale(0.8);

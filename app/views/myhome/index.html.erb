@@ -6,18 +6,21 @@
       <ul class="nav nav-pills nav-stacked">
       <% @links.each do |link| %>
         <div class="breakers">
-          <li><a href="<%= link.uri %>" class="<%= link.has_relevant_icon %>"><%= link.name %></a><span class="editButton">&nbsp;&nbsp;<%= link_to 'Edit', edit_link_path(link) %></span></li>
+          <li><a href="<%= link.uri %>" class="<%= link.has_relevant_icon %>"><%= link.name %></a><span class="editButton">&nbsp;&nbsp;
+            <!-- edit button here -->
         </div>
       <% end %>
       </ul>
 
     </div>
-
-    <script>
-      // setTimeout(function() {window.location = "http://www.google.com/"; }, 4000);
-    </script>
+    
+    
   </div>
 
+  <% @videos.videos.each do |video| %>
+    <%= video.embed_html %>
+  <% end %>
+  
 <% else %> 
 
   <div class="row">
@@ -28,5 +31,6 @@
 
 
 <% end %>
+
 
 
