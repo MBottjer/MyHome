@@ -1,4 +1,5 @@
 MyHome::Application.routes.draw do
+  get "artists/index"
   devise_for :users
   get "myhome/index"
   # The priority is based upon order of creation: first created -> highest priority.
