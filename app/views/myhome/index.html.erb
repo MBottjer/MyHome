@@ -17,9 +17,9 @@
     
   </div>
 
-  <% @videos.videos.each do |video| %>
-    <%= video.embed_html %>
-  <% end %>
+  <%= raw @videos.videos.first.embed_html %>
+ 
+ 
   
 <% else %> 
 
