@@ -8,11 +8,6 @@ class MyhomeController < ApplicationController
       # @videos = client.playlists(username, "music")
       @links = current_user.links
 
-      respond_to do |format|
-        format.html # index.html.erb
-        format.json { render json: @videos }
-      end
-
     end
 
   end

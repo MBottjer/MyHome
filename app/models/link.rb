@@ -10,8 +10,10 @@ class Link < ActiveRecord::Base
       "fa fa-youtube fa-2x"
     elsif self.name.match /^[gG]oogle+$/
       "fa fa-google-plus fa-2x"
-    elsif self.name.match /^[lL]inkedin%/
+    elsif self.name.match /^[lL]inkedin$/
       "fa fa-linkedin-square fa-2x"
+    elsif self.name.match /^[tT]witter$/
+      "fa fa-twitter fa-2x" 
     else 
       "button radius"
     end

@@ -4,6 +4,6 @@ Feature: Adding relevant links
   I need to be able to add and remove links specific to me
 
   Scenario: Adding links
-    Given I am on the MyDashboard page
+    Given I have signed up and am signed in
     When I customise my links
     Then I should see the links on the homepage

@@ -2,7 +2,10 @@
 
   <div class="row">
 
-    <div class="small-6 large-centered columns middle">
+    <div class="small-2 large-4 columns">
+      <%= raw @videos.videos.first.embed_html %>
+    </div>
+    <div class="small-4 large-4 columns">
       <ul class="nav nav-pills nav-stacked">
       <% @links.each do |link| %>
         <div class="breakers">
@@ -14,10 +17,10 @@
 
     </div>
     
-    
+    <div class="small-6 large-4 columns">...</div>
   </div>
 
-  <%= raw @videos.videos.first.embed_html %>
+  
  
  
   
