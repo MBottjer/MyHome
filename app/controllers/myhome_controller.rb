@@ -7,6 +7,7 @@ class MyhomeController < ApplicationController
       @videos = client.videos_by(:query => "bon iver album", :per_page => 2)
       # @videos = client.playlists(username, "music")
       @links = current_user.links
+      @user = current_user
 
     end
 

@@ -9,6 +9,7 @@ MyHome::Application.routes.draw do
 
   resources :users do 
     resources :links 
+    resources :artists
   end
 
   # Example of regular route:

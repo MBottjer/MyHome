@@ -1,0 +1,10 @@
+<%= form_for([@user, @user.artists.build]) do |f| %>
+  <div>
+    <%= f.label :artist, "Artist:" %>
+    <%= f.text_field :artist %>
+  </div>
+
+  <div>
+    <%= f.submit "Add Artists" %>
+  </div>
+<% end %> 
