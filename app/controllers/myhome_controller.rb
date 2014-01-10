@@ -10,14 +10,20 @@ class MyhomeController < ApplicationController
       # @videos = client.playlists(username, "music")
       @links = current_user.links
       @user = current_user
+      @information = information.inject(Hash.new(0)) {|hash, number| hash[number] += 1 ; hash}
     end
 
   end
 
-  def iterate_through(artists)
-    artists.each do |artist|
-      artist.artist
-    end
+  def get_json(uri)
+    response = Net::HTTP.get_response(URI(uri))
+    JSON.parse(response.body)
   end
+
+  def information 
+    get_json("https://api.github.com/users/Mbottjer/repos").map {|repo| repo["language"]}
+  end
+
+
 
 end

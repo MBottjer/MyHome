@@ -8,11 +8,11 @@ class LinksController < ApplicationController
   end
 
   def edit
-    @link = Link.find(params[:id])
+    @link = current_user.links.find(params[:id])
   end
 
   def update
-    @link = Link.find(params[:id])
+    @link = current_user.links.find(params[:id])
    
     if @link.update(params[:link].permit(:name, :uri))
       redirect_to '/'
@@ -29,6 +29,14 @@ class LinksController < ApplicationController
     else 
       render 'new'
     end
+  end
+
+  def destroy
+    @user = current_user
+    @link = @user.links.find(params[:id])
+    @link.destroy
+
+    redirect_to '/'
   end
 
   def show
