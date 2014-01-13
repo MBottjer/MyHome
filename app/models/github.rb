@@ -12,4 +12,5 @@ class Github < ActiveRecord::Base
   def self.create_hash_of_dominant_languages_in_repo_from(used_languages)
     used_languages.inject(Hash.new(0)) {|hash, number| hash[number] += 1 ; hash}
   end
+  
 end

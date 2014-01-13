@@ -37,6 +37,8 @@ gem 'google-api-client'
 gem 'youtube_it'
 gem 'launchy'
 gem 'httparty'
+gem 'oauth2'
+gem 'dotenv-rails'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
