@@ -8,6 +8,14 @@ class ArtistsController < ApplicationController
     redirect_to '/'
   end
 
+  def destroy 
+    @user = current_user
+    @video = Artist.find(params[:id])
+    @video.destroy
+
+    redirect_to '/'
+  end
+
   private
     def link_params
       params.require(:artist).permit(:artist)

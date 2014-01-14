@@ -6,10 +6,6 @@ i {
   color:#F78D3F;
 }
 
-div.row {
-  margin-top:1%;
-}
-
 div.breakers {
   padding-top: 10px;
 }
@@ -29,14 +25,37 @@ a.button {
 }
 
 body {
-  margin: 0px;
-  background: #FFFFFF;
+  background: white;
   overflow: hidden;
+  background-image: image-url("beach.jpg");
 }
 
-div.middle {
-  margin-top:10px;
+div.small-6.large-centered.columns.sign_in {
+  background: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: inset none;
 }
+
+// body div#dots {
+//   // background-image: image-url("dot.png");
+//   width: 100%;
+//   height: 100%;
+//   display: block;
+//   position: fixed;
+//   z-index: 9996;
+//   top: 0;
+//   left: 0;
+// }
+
+// div.middle {
+//   margin-top:10px;
+// }
+
+// div.center {
+//   font-size:5px;
+//   color:black;
+// }
 
 button.addartist {
   background-color:transparent;
@@ -49,10 +68,90 @@ input#artist_artist {
   width:94%;
 }
 
-header {
-  color:#FFFFFF;
+// #header {
+//   height:119px;
+//   width:100%;
+//   position:fixed;
+//   // background:#000000;
+//   display:block;
+//   // margin-bottom: 10px;
+//   background:black;
+//   opacity:0.8;
+//   z-index: 9999;
+//   background: image-url("header_bkg.png");
+// }
+
+// div.header_content {
+//   // background:black;
+//   width:960px;
+//   height:90px;
+//   position:relative;
+//   margin:0 auto;
+// }
+
+// div.float-left {
+//   float: left;
+//   width: 400px;
+//   // background:black;
+//   text-align: left;
+//   color:white;
+// }
+
+// li.initials {
+//   font-size: 40px;
+// }
+
+// div.float-right {
+//   float: right;
+//   width: 400px;
+//   // background: black;
+//   text-align: left;
+//   color:white;
+// }
+
+// div.center {
+//   display: inline-block;
+//   color:white;
+// }
+
+
+// I commented out the below changing back to foundations header
+nav ul {
+  // padding-top:40px;
 }
 
-button.show-comments {
+nav.top-bar {
+
+}
+
+button.show-video {
   font-size:10px;
+}
+
+// commented out below
+body div.content_wrapper {
+  // padding-top:119px;
+}
+
+div.columns {
+  background: white;
+  opacity:1;
+  padding-top:10px;
+  -moz-box-shadow: inset -5px -5px black;
+  -webkit-box-shadow: inset -5px -5px black;
+  box-shadow: inset -5px -5px black;
+  height:500px;
+  // background:
+  // linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+  // linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+  // linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+  // linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+  // linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+  // linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  // background-color: #131313;
+  // background-size: 20px 20px;
+}
+
+div.row {
+  margin-top:0px;
 }

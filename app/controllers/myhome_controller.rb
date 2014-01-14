@@ -8,7 +8,6 @@ class MyhomeController < ApplicationController
       @videos = Youtube.filter_videos(@artists)
       @links = @user.links
       @information = Github.create_hash_of_dominant_languages_in_repo_from(Github.dominantly_used_languages)
-      @client_id = ENV['GH_BASIC_CLIENT_ID']
     end
 
   end

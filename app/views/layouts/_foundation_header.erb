@@ -1,0 +1,35 @@
+<nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="/">MyHome</a></h1>
+          </li>
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <% if current_user %>
+            <li class="active"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <li class="active"><a href="/users/sign_up">Sign Up</a></li>
+            <% end %>
+            <li class="has-dropdown">
+              <a href="#"><i class="fa fa-cog fa-spin fa-2x headerCog"></i></a>
+              <ul class="dropdown">
+                <% if current_user %>
+                <li><%= link_to "AddLink", new_user_link_path(current_user.id), :id => 'addlink' %></li>
+                <% end %>
+                <% unless current_user %>
+                <li><a href="/users/sign_in">Sign In</a></li>
+                <% end %>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left">
+            <li><a href="#" id="timestamp"></a></li>
+          </ul>
+        </section>
+      </nav>

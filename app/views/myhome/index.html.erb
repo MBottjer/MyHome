@@ -5,12 +5,12 @@
     <div class="small-2 large-4 columns">
       <%= render "myhome/new_artist" %>
       <% @videos.each do |video| %>
-        <!-- <button class="show-comments"> -->
+        <a class="show-video">
         <%=truncate(video.videos.first.title, :length => 40)%>
-        <!-- </button> -->
-        <!-- <div class="video" id="collapse" style="display:none"> -->
+        </a>
+        <div class="video" style="display:none">
         <%= raw video.videos.first.embed_html %>
-        <!-- </div> -->
+        </div>
       <% end %>
     </div>
     <div class="small-4 large-4 columns">
@@ -22,7 +22,7 @@
               <i class="fa fa-cog"></i>
             <% end %>&nbsp;&nbsp;
             <%= link_to(user_link_path(@user.id, link), method: :delete) do %>
-              <i class="fa fa-minus-circle fa-1x"></i>
+              <i class="fa fa-times-circle fa-1x"></i>
             <% end %>
         </div>
       <% end %>
@@ -30,9 +30,7 @@
 
     </div>
     
-    <div class="small-6 large-4 columns"><%= @information %> 
-    <a href="https://github.com/login/oauth/authorize?client_id=<%= @client_id %>">Click here</a>
-    </div>
+    <div class="small-6 large-4 columns"><%= @information %></div>
   </div>
 
   
