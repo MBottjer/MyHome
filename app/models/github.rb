@@ -13,16 +13,8 @@ class Github < ActiveRecord::Base
     used_languages.inject(Hash.new(0)) {|hash, number| hash[number] += 1 ; hash}
   end
 
-  def self.total_number_of_repos(repos_and_respective_languages)
-    array_of_repos = []
-    repos_and_respective_languages.each_value do |value| 
-      array_of_repos << value 
-    end
-    array_of_repos
-  end
-
-  def self.total(repos_and_respective_languages)
-    total_number_of_repos(repos_and_respective_languages).inject {|sum, number| sum + number }
+  def self.total_repos(repos_and_respective_languages)
+    repos_and_respective_languages.values.sum
   end
 
 
