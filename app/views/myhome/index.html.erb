@@ -31,16 +31,8 @@
     </div>
     
     <div class="small-6 large-4 columns">
-      <%= @information %>
       <div class="colour_bar">
-        <span class="javascript" style="width:<%= percentage_of_language %>">
-        </span>
-        <span class="ruby" style"width:<%= percentage_of_language %>">
-        </span>
-        <span class="css" style"width:<%= percentage_of_language %>">
-        </span>
-        <span class="nil" style="width:<%= percentage_of_language %>">
-        </span>
+        <span class="javascript" style="width:<%= (Github.repos_by_language_percentage(@information)["JavaScript"]).to_s + "%" %>;"></span><span class="ruby" style="width:<%= (Github.repos_by_language_percentage(@information)["Ruby"]).to_s + "%" %>;"></span><span class="css" style="width:<%= (Github.repos_by_language_percentage(@information)["CSS"]).to_s + "%" %>;"></span><span class="nil" style="width:<%= (Github.repos_by_language_percentage(@information)[nil]).to_s + "%" %>;"></span>
       </div>
 
 
