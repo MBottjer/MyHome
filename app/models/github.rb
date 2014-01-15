@@ -17,6 +17,11 @@ class Github < ActiveRecord::Base
     repos_and_respective_languages.values.sum
   end
 
+  def self.repos_by_language_percentage(hash_of_repo_languages)
+    total = total_repos(hash_of_repo_languages)
+    hash_of_repo_languages.each_key {|key| hash_of_repo_languages[key] = (hash_of_repo_languages[key]*100/total).round(1) }
+  end
+
 
   
 end

@@ -12,6 +12,10 @@ describe Github do
     expect(Github.total_repos(language_hash)).to eq 19
   end
 
+  it "should return a hash with key as language and percentage as value" do 
+    expect(Github.repos_by_language_percentage(language_hash)).to eq language_hash = {"Ruby"=>78.0, nil=>10.0, "JavaScript"=>5.0, "CSS"=>5.0}
+  end
+
 
 
 
