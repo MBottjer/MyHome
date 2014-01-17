@@ -7,7 +7,7 @@ class MyhomeController < ApplicationController
       @artists = @user.artists
       @videos = Youtube.filter_videos(@artists)
       @links = @user.links
-      @information = Github.create_hash_of_dominant_languages_in_repo_from(Github.dominantly_used_languages)
+      @languages = Github.create_hash_of_dominant_languages_in_repo_from(Github.dominantly_used_languages)
     end
 
   end

@@ -31,12 +31,20 @@
     </div>
     
     <div class="small-6 large-4 columns">
+
       <div class="colour_bar">
-        <span class="javascript" style="width:<%= (Github.repos_by_language_percentage(@information)["JavaScript"]).to_s + "%" %>;"></span><span class="ruby" style="width:<%= (Github.repos_by_language_percentage(@information)["Ruby"]).to_s + "%" %>;"></span><span class="css" style="width:<%= (Github.repos_by_language_percentage(@information)["CSS"]).to_s + "%" %>;"></span><span class="nil" style="width:<%= (Github.repos_by_language_percentage(@information)[nil]).to_s + "%" %>;"></span>
+        <span class="javascript" style="width:<%= (Github.repos_by_language_percentage(@languages)["JavaScript"]).to_s + "%" %>;"></span><span class="ruby" style="width:<%= (Github.repos_by_language_percentage(@languages)["Ruby"]).to_s + "%" %>;"></span><span class="css" style="width:<%= (Github.repos_by_language_percentage(@languages)["CSS"]).to_s + "%" %>;"></span><span class="nil" style="width:<%= (Github.repos_by_language_percentage(@languages)[nil]).to_s + "%" %>;"></span>
       </div>
+      <div class="color-scheme"><div class="javascript_box"></div><span class="key">JavaScript</span>&nbsp;<div class="nil_box"></div><span class="key">nil</span>&nbsp;<div class="ruby_box"></div><span class="key">Ruby</span>&nbsp;<div class="css_box"></div><span class="key">CSS</span></div>
 
-
+      <div id="repos">
+        <ul id="repo_list">
+        </ul>
+      </div>
+      <div id="repo_content"></div>
+      <button id="btn_get_repos">Get Repos</button><span id="repo_count"></span>
     </div>
+
   </div>
 
   
