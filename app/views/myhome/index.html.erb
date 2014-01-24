@@ -17,7 +17,7 @@
       <ul class="nav nav-pills nav-stacked">
       <% @links.each do |link| %>
         <div class="breakers" style="padding-top: 0px;">
-          <li><a href="<%= link.uri %>" class="<%= link.has_relevant_icon %>"><%= link.name %></a><span class="editButton">&nbsp;&nbsp;
+          <li><a href="<%= link.uri %>" class="<%= link.relevant_icon %>"><%= link.name %></a><span class="editButton">&nbsp;&nbsp;
             <%= link_to(edit_user_link_path(link.id, current_user.id)) do %>
               <i class="fa fa-cog"></i>
             <% end %>&nbsp;&nbsp;
