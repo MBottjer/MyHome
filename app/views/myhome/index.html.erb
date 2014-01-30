@@ -5,9 +5,13 @@
     <div class="small-2 large-4 columns">
       <%= render "myhome/new_artist" %>
       <% @videos.each do |video| %>
+      
         <a class="show-video">
+          <p>
         <%=truncate(video.videos.first.title, :length => 40)%>
+          </p>
         </a>
+      
         <div class="video" style="display:none">
         <%= raw video.videos.first.embed_html %>
         </div>
