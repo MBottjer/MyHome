@@ -1,5 +1,7 @@
 class Github < ActiveRecord::Base
 
+require 'net/http'
+
   def self.get_json(uri)
     response = Net::HTTP.get_response(URI(uri))
     JSON.parse(response.body)

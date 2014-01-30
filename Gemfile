@@ -30,7 +30,6 @@ gem 'jbuilder', '~> 1.2'
 gem 'font-awesome-sass'
 gem 'foundation-rails'
 gem 'devise'
-gem 'lastfm-client', :git => 'http://github.com/pch/lastfm-client.git'
 gem 'dotenv-rails'
 gem 'google-api-client'
 # gem 'youtube_it', :git => 'https://github.com/chebyte/youtube_it'
@@ -39,10 +38,15 @@ gem 'launchy'
 gem 'httparty'
 gem 'oauth2'
 gem 'dotenv-rails'
+gem 'oauth2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :test, :production do
+  gem 'rails_12factor'
 end
 
 group :test, :development do
